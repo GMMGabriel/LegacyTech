@@ -1,0 +1,15 @@
+.texto_na_direita{
+    text-align: right;
+}
+
+p{
+    text-align: justify;
+}
+
+.faixa_alternativa{
+    width: 100%;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    background-color: #777;
+}

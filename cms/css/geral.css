@@ -1,0 +1,31 @@
+/* CSS geral. */
+
+*{
+    font-family: verdana;
+    outline: none;
+    font-size: 12pt;
+}
+
+body{
+    margin: 0px;
+    background-color: #d9d9d9;
+}
+
+.main_container{
+    width: 1200px;
+    min-height: 800px;
+    height: auto;
+    overflow: auto;
+    background-color: #777;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu{
+    width: 1200px;
+    height: 300px;
+    background-color: #444;
+}

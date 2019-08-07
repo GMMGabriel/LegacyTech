@@ -1,0 +1,213 @@
+/* CSS DO RODAPÉ. */
+
+footer{
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    background-color: #333;
+}
+
+/* Segura a div no meio da tela. */
+#segura_footer{
+    width: 1200px;
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+/*    background-color: fuchsia;*/
+}
+
+/* Div para o mapa do site. */
+#mapa_site{
+    width: 1120px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+/*    background-color: forestgreen;*/
+}
+
+#mapa_site h1{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
+    color: #112;
+}
+
+/* Menu principal do mapa. */
+#mapa_site ul{
+    width: 1120px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+#mapa_site ul li{
+    width: 200px;
+    height: auto;
+    float: left;
+}
+
+#mapa_site ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+#mapa_site ul li a:hover{
+    width: 200px;
+    height: auto;
+    float: left;
+    color: #fff;
+/*    text-decoration: underline;*/
+}
+
+/* Menu secundário do mapa. */
+#menuS_mapa ul{
+    width: 200px;
+    min-height: 0px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 5px;
+/*    display: none;*/
+}
+
+#menuS_mapa ul li{
+    margin-bottom: 5px;
+}
+
+#menuS_mapa ul li a{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Div que divide o mapa do site do resto do conteudo abaixo. */
+
+.divisor{
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 100%;
+    left: -0%;
+    position: absolute;
+    box-shadow: 0px 0px 10px #000;
+}
+
+/* Div que segura as divs de informações. */
+#area_informacoes{
+    width: 1200px;
+    min-height: 125px;
+    height: auto;
+    overflow: auto;
+/*    background-color: firebrick;*/
+}
+
+#area_informacoes h1{
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #112;
+}
+
+/* Div que mostra informações da empresa, como endereço, telefone, e-mail, etc. */
+
+#dados_empresa{
+    width: 1120px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+/*    background-color: dodgerblue;*/
+}
+
+#dados_empresa img{
+    margin-right: 5px;
+}
+
+#dados_empresa p{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+/* Segura as divs de informações. */
+#segura_informacoes{
+    width: 1200px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding-top: 15px;
+}
+
+/* Div das redes sociais e do desenvolvedor (INFORMAÇÕES). */
+.informacoes{
+    width: 519px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    margin-bottom: 15px;
+    padding: 40px;
+    padding-top: 15px;
+/*    background-color: dodgerblue;*/
+    float: left;
+    text-align: center;
+}
+
+.informacoes a{
+    color: #000;
+    text-decoration: none;
+}
+
+.informacoes a:hover{
+    text-decoration: underline;
+}
+
+.informacoes p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.informacoes img{
+    width: 64px;
+    height: 64px;
+    filter: contrast(0%);
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.informacoes img:hover{
+    filter: contrast(100%);
+    transition: 0.3s;
+}
+
+#divide_informacoes{
+    width: 2px;
+    height: 181px;
+    background-color: #000;
+    float: left;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px #000;
+}

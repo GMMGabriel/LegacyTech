@@ -1,0 +1,56 @@
+/* CSS PARA ESTILIZAÇÃO GERAL. */
+
+*{
+    font-family: verdana;
+    outline: none;
+    font-size: 12pt;
+}
+
+p{
+    text-indent: 20px;
+}
+
+input{
+    width: 200px;
+    height: 20px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+body{
+    margin: 0px;
+}
+
+#main{
+    width: 100%;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    background-color: #d9d9d9;
+}
+
+.segura_conteudo_no_meio{
+    width: 1190px;
+    min-height: 100px;
+    height: auto;
+    overflow: auto;
+    padding: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+}
+
+.mostrar_gif_carregando{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.mostrar_gif_carregando img{
+    width: 200px;
+    height: 200px;
+}
