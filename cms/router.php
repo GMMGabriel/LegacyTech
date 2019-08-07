@@ -11,7 +11,13 @@ switch($controller){
         
     case 'funcionario':
         
-        
+        switch($modo){
+                
+            case 'login':
+                
+                break;
+                
+        }
         
         break;
         
