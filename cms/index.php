@@ -10,4 +10,6 @@ if(isset($_SESSION['nomeFun'])){
     require_once("views/login/index.php");
 }
 
+session_destroy();
+
 ?>

@@ -15,6 +15,11 @@ switch($controller){
                 
             case 'login':
                 
+//                echo $_POST['txtCpf'].' - '.$_POST['txtSenha'];
+                
+                $_SESSION['nomeFun'] = "Gabriel";
+                header('location:../cms/');
+                
                 break;
                 
         }

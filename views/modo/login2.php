@@ -30,6 +30,6 @@
     </div>
     
     <div class="classe_links">
-        <a href="">Acessar o CMS</a>
+        <a href="../../cms/">Acessar o CMS</a>
     </div>
 </div>

@@ -1,0 +1,65 @@
+/* CSS da página de login do CMS. */
+
+body{
+    background-color: #777;
+}
+
+#container_segura{
+    width: 500px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Letreiro. */
+
+img{
+    margin-top: 10px;
+/*    margin-bottom: 10px;*/
+}
+
+/* Info do login. */
+
+#info_login{
+    width: 100%;
+    height: 50px;
+/*    background-color: aqua;*/
+    font-size: 20pt;
+    line-height: 50px;
+}
+
+/* Linhas das inputs. */
+
+.linhas_inputs{
+    width: 100%;
+    height: 40px;
+/*    background-color: dodgerblue;*/
+    line-height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* div que contem o texto de solicitar nova senha. */
+
+#container_sns{
+    width: 100%;
+    height: 30px;
+/*    background-color: darkviolet;*/
+    line-height: 30px;
+}
