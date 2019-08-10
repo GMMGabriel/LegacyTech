@@ -84,6 +84,7 @@ header{
     position: absolute;
     z-index: 1;
     margin-top: 50px;
+    display: none;
 }
 
 .mostra_nome_cliente b{
