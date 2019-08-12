@@ -152,19 +152,11 @@ header{
     width: 200px;
     height: 48px;
     float: left;
-/*
-    border-right: solid 1px #fff;
-    border-left: solid 1px #fff;
-*/
     margin-left: 1px;
     margin-right: 1px;
     line-height: 48px;
     text-align: center;
-/*    background-color: #555;*/
     color: #fff;
-    font-weight: bold;
-    font-size: 14pt;
-    cursor: pointer;
 }
 
 #lista_menu ul li .movimento_efeito{
@@ -179,6 +171,15 @@ header{
 #lista_menu ul li:hover .movimento_efeito{
     width: 200px;
     transition: 0.5s;
+}
+
+.div_lista_menu a{
+    cursor: pointer;
+}
+
+.div_lista_menu{
+    font-weight: bold;
+    font-size: 14pt;
 }
 
 /* Sub menu. */

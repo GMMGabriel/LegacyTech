@@ -5,14 +5,15 @@ class Cliente{
     public $idCliente;
     public $nome;
     public $sobrenome;
+    public $email;
     public $cpf;
     public $dataNasc;
     public $sexo;
-    public $email;
+    public $telefone;
     public $senha;
     public $numero;
     public $cep;
-    public $logadouro;
+    public $logradouro;
     public $bairro;
     public $cidade;
     public $estado;
@@ -49,7 +50,7 @@ class Cliente{
             
             if($verificaEmail == null){
                 
-                $sql = "INSERT INTO tbl_cliente(nome, sobrenome, cpf, dataNasc, sexo, email, senha, numero, cep, logadouro, bairro, cidade, estado, qtdCompras)
+                $sql = "INSERT INTO tbl_cliente(nome, sobrenome, cpf, dataNasc, sexo, email, telefone, senha, numero, cep, logradouro, bairro, cidade, estado, qtdCompras)
                 VALUES(
                 '".$clienteClass->nome."',
                 '".$clienteClass->sobrenome."',
@@ -57,10 +58,11 @@ class Cliente{
                 '".$clienteClass->dataNasc."',
                 '".$clienteClass->sexo."',
                 '".$clienteClass->email."',
+                '".$clienteClass->telefone."',
                 '".$clienteClass->senha."',
                 '".$clienteClass->numero."',
                 '".$clienteClass->cep."',
-                '".$clienteClass->logadouro."',
+                '".$clienteClass->logradouro."',
                 '".$clienteClass->bairro."',
                 '".$clienteClass->cidade."',
                 '".$clienteClass->estado."',
@@ -113,14 +115,15 @@ class Cliente{
         $sql = "UPDATE tbl_cliente SET 
         nome = '".$clienteClass->nome."',
         sobrenome = '".$clienteClass->sobrenome."',
+        email = '".$clienteClass->email."',
         cpf = '".$clienteClass->cpf."',
         dataNasc = '".$clienteClass->dataNasc."',
         sexo = '".$clienteClass->sexo."',
-        email = '".$clienteClass->email."',
+        telefone = '".$clienteClass->telefone."',
         senha = '".$clienteClass->senha."',
         numero = '".$clienteClass->numero."',
         cep = '".$clienteClass->cep."',
-        logadouro = '".$clienteClass->logadouro."',
+        logradouro = '".$clienteClass->logradouro."',
         bairro = '".$clienteClass->bairro."',
         cidade = '".$clienteClass->cidade."',
         estado = '".$clienteClass->estado."'
@@ -135,14 +138,15 @@ class Cliente{
             
             $_SESSION['nome'] = $clienteClass->nome;
             $_SESSION['sobrenome'] = $clienteClass->sobrenome;
+            $_SESSION['email'] = $clienteClass->email;
             $_SESSION['cpf'] = $clienteClass->cpf;
             $_SESSION['dataNasc'] = $clienteClass->dataNasc;
             $_SESSION['sexo'] = $clienteClass->sexo;
-            $_SESSION['email'] = $clienteClass->email;
+            $_SESSION['telefone'] = $clienteClass->telefone;
             $_SESSION['senha'] = $clienteClass->senha;
             $_SESSION['numero'] = $clienteClass->numero;
             $_SESSION['cep'] = $clienteClass->cep;
-            $_SESSION['logadouro'] = $clienteClass->logadouro;
+            $_SESSION['logradouro'] = $clienteClass->logradouro;
             $_SESSION['bairro'] = $clienteClass->bairro;
             $_SESSION['cidade'] = $clienteClass->cidade;
             $_SESSION['estado'] = $clienteClass->estado;
@@ -183,14 +187,15 @@ class Cliente{
             $listCliente[$cont]->idCliente = $rs['idCliente'];
             $listCliente[$cont]->nome = $rs['nome'];
             $listCliente[$cont]->sobrenome = $rs['sobrenome'];
+            $listCliente[$cont]->email = $rs['email'];
             $listCliente[$cont]->cpf = $rs['cpf'];
             $listCliente[$cont]->dataNasc = $rs['dataNasc'];
             $listCliente[$cont]->sexo = $rs['sexo'];
-            $listCliente[$cont]->email = $rs['email'];
+            $listCliente[$cont]->telefone = $rs['telefone'];
             $listCliente[$cont]->senha = $rs['senha'];
             $listCliente[$cont]->numero = $rs['numero'];
             $listCliente[$cont]->cep = $rs['cep'];
-            $listCliente[$cont]->logadouro = $rs['logadouro'];
+            $listCliente[$cont]->logradouro = $rs['logradouro'];
             $listCliente[$cont]->bairro = $rs['bairro'];
             $listCliente[$cont]->cidade = $rs['cidade'];
             $listCliente[$cont]->estado = $rs['estado'];
@@ -206,14 +211,15 @@ class Cliente{
             $_SESSION['idCliente'] = $listCliente[0]->idCliente;
             $_SESSION['nome'] = $listCliente[0]->nome;
             $_SESSION['sobrenome'] = $listCliente[0]->sobrenome;
+            $_SESSION['email'] = $listCliente[0]->email;
             $_SESSION['cpf'] = $listCliente[0]->cpf;
             $_SESSION['dataNasc'] = $listCliente[0]->dataNasc;
             $_SESSION['sexo'] = $listCliente[0]->sexo;
-            $_SESSION['email'] = $listCliente[0]->email;
+            $_SESSION['telefone'] = $listCliente[0]->telefone;
             $_SESSION['senha'] = $listCliente[0]->senha;
             $_SESSION['numero'] = $listCliente[0]->numero;
             $_SESSION['cep'] = $listCliente[0]->cep;
-            $_SESSION['logadouro'] = $listCliente[0]->logadouro;
+            $_SESSION['logradouro'] = $listCliente[0]->logradouro;
             $_SESSION['bairro'] = $listCliente[0]->bairro;
             $_SESSION['cidade'] = $listCliente[0]->cidade;
             $_SESSION['estado'] = $listCliente[0]->estado;
@@ -222,17 +228,15 @@ class Cliente{
             if($_SESSION['sexo'] == 'M'){
 
                 echo("<script>
-                    alert('Bem vindo senhor ".$listCliente[0]->nome.".');
-                    // window.location.href = 'views/../';
-                    history.go(-1);
+                    alert('Bem vindo ".$listCliente[0]->nome.".');
+                    window.location.href = 'views/../';
                 </script>");
 
             }else{
 
                 echo("<script>
-                    alert('Bem vinda senhorita ".$listCliente[0]->nome.".');
-                    // window.location.href = 'views/../';
-                    history.go(-1);
+                    alert('Bem vinda ".$listCliente[0]->nome.".');
+                    window.location.href = 'views/../';
                 </script>");
 
             }

@@ -11,18 +11,21 @@ $infoPageTopo = "Cadastrar-se";
 $infoPage = "Cadastre-se para conseguir realizar compras no nosso site. E atenção, <u>todos</u> os campos são <u>obrigatórios</u>.";
 
 $botao = "Cadastrar";
+$btnLimpar = "Limpar";
 
 $idCliente = null;
 $nome = null;
 $sobrenome = null;
+$email = null;
 $cpf = null;
 $dataNasc = null;
 $sexo = null;
-$email = null;
+$telefone = null;
 $senha = "Senha";
+$confirmarSenha = "Confirmar senha";
 $numero = null;
 $cep = null;
-$logadouro = null;
+$logradouro = null;
 $bairro = null;
 $cidade = null;
 $estado = null;
@@ -40,18 +43,21 @@ if(isset($_SESSION['idCliente'])){
         $infoPage = "Mude suas informações a vontade. E atenção, se você preencher o campo <u>senha</u>, a sua senha será atualizada, caso não preencha este campo, a sua senha continuará a mesma.";
         
         $botao = "Atualizar";
+        $btnLimpar = "Restaurar";
         
         $idCliente = $_SESSION['idCliente'];
         $nome = $_SESSION['nome'];
         $sobrenome = $_SESSION['sobrenome'];
+        $email = $_SESSION['email'];
         $cpf = $_SESSION['cpf'];
         $dataNasc = $_SESSION['dataNasc'];
         $sexo = $_SESSION['sexo'];
-        $email = $_SESSION['email'];
+        $telefone = $_SESSION['telefone'];
         $senha = "Nova senha";
+        $confirmarSenha = "Confirmar nova senha";
         $numero = $_SESSION['numero'];
         $cep = $_SESSION['cep'];
-        $logadouro = $_SESSION['logadouro'];
+        $logradouro = $_SESSION['logradouro'];
         $bairro = $_SESSION['bairro'];
         $cidade = $_SESSION['cidade'];
         $estado = $_SESSION['estado'];
@@ -78,10 +84,6 @@ if(isset($_SESSION['idCliente'])){
         <link rel="stylesheet" type="text/css" href="../../css/footer.css">
         <link rel="stylesheet" type="text/css" href="../../css/modal_login.css">
         <link rel="stylesheet" type="text/css" href="../../css/cadastrar_cliente.css">
-        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/jquery2.js"></script>
-        <script type="text/javascript" src="../../js/modal_login.js"></script>
         
         <?php require_once("../modo/icone_logo.php"); ?>
         
@@ -142,14 +144,19 @@ if(isset($_SESSION['idCliente'])){
 <!--                FAIXAS PARA SEPARAR EM LINHAS.    -->
                     <div class="linhas">
 <!--                    COLUNAS EM DUPLA.    -->
-                        <div class="colunas_dupla">
+                        <div class="colunas_trio">
 <!--                        NOME.    -->
-                            <input class="inpute_cadastrar dupla" type="text" name="txtNome" placeholder="Nome" maxlength="20" required value="<?=$nome;?>">
+                            <input class="inpute_cadastrar trio" type="text" name="txtNome" placeholder="Nome" maxlength="20" required value="<?=$nome;?>">
                         </div>
 
-                        <div class="colunas_dupla">
+                        <div class="colunas_trio">
 <!--                        SOBRENOME.    -->
-                            <input class="inpute_cadastrar dupla" type="text" name="txtSobrenome" placeholder="Sobrenome" maxlength="60" required value="<?=$sobrenome;?>">
+                            <input class="inpute_cadastrar trio" type="text" name="txtSobrenome" placeholder="Sobrenome" maxlength="60" required value="<?=$sobrenome;?>">
+                        </div>
+
+                        <div class="colunas_trio">
+<!--                        E-MAIL.    -->
+                            <input class="input_cadastrar trio" type="email" name="txtEmail" placeholder="E-mail" maxlength="60" required value="<?=$email;?>">
                         </div>
                     </div>
 <!--                FAIXAS PARA SEPARAR EM LINHAS.    -->
@@ -173,14 +180,19 @@ if(isset($_SESSION['idCliente'])){
 <!--                FAIXAS PARA SEPARAR EM LINHAS.    -->
                     <div class="linhas">
 <!--                    COLUNAS EM DUPLA.    -->
-                        <div class="colunas_dupla">
-<!--                        E-MAIL.    -->
-                            <input class="input_cadastrar dupla" type="email" name="txtEmail" placeholder="E-mail" maxlength="60" required value="<?=$email;?>">
+                        <div class="colunas_trio">
+<!--                        TELEFONE.    -->
+                            <input class="input_cadastrar trio" type="tel" name="txtTelefone" placeholder="Telefone" maxlength="14" onkeypress="mascaraTel(this, event);" required value="<?=$telefone;?>">
                         </div>
                         
-                        <div class="colunas_dupla">
+                        <div class="colunas_trio">
 <!--                        SENHA.    -->
-                            <input class="input_cadastrar dupla" type="password" name="txtSenha" placeholder="<?=$senha;?>" maxlength="20" title="Até 20 caractéres" <?=$requiredSenha;?>>
+                            <input class="input_cadastrar trio" type="password" name="txtSenha" placeholder="<?=$senha;?>" maxlength="20" title="Até 20 caractéres" <?=$requiredSenha;?>>
+                        </div>
+                        
+                        <div class="colunas_trio">
+<!--                        CONFIRMAR SENHA.    -->
+                            <input class="input_cadastrar trio" type="password" name="txtConfirmarSenha" placeholder="<?=$confirmarSenha;?>" maxlength="20" title="Até 20 caractéres" <?=$requiredSenha;?>>
                         </div>
                     </div>
 <!--                FAIXAS PARA SEPARAR EM LINHAS.    -->
@@ -196,8 +208,8 @@ if(isset($_SESSION['idCliente'])){
                         </div>
 
                         <div class="colunas_trio">
-<!--                         LOGADOURO.   -->
-                            <input class="input_cadastrar trio" type="text" name="txtLogadouro" placeholder="Logadouro" maxlength="50" required value="<?=$logadouro;?>">
+<!--                         logradouro.   -->
+                            <input class="input_cadastrar trio" type="text" name="txtlogradouro" placeholder="logradouro" maxlength="50" required value="<?=$logradouro;?>">
                         </div>
 
                         <div class="colunas_trio">
@@ -256,7 +268,7 @@ if(isset($_SESSION['idCliente'])){
 <!--                ÁREA DOS BOTÕES.    -->
                     <div class="area_botoes">
 <!--                    LIMPAR.    -->
-                        <input class="btns_cadastrar" type="reset" name="btnLimpar" value="Limpar">
+                        <input class="btns_cadastrar" type="reset" name="btnLimpar" value="<?=$btnLimpar;?>">
 <!--                    CADASTRAR.    -->
                         <input class="btns_cadastrar" type="submit" name="btnCadastrar" value="<?=$botao;?>">
                     </div>
@@ -267,6 +279,11 @@ if(isset($_SESSION['idCliente'])){
 <!--    RODAPÉ    -->
         
         <?php require_once("../modo/rodape.php"); ?>
+        
+        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery2.js"></script>
+        <script type="text/javascript" src="../../js/modal_login.js"></script>
         
         <script>
             
@@ -342,7 +359,66 @@ if(isset($_SESSION['idCliente'])){
                 
             }
             
+            // Mascara para  o campo telefone.
+            function mascaraTel( campo, e ){
+                
+                var kC = (document.all) ? event.keyCode : e.keyCode,
+                    data = campo.value;
+                
+                if( kC!=8 && kC!=46 ){
+                    if(data.length==0){
+                        
+                        campo.value = data += '(';
+                        
+                    }else if(data.length==3){
+                        
+                        campo.value = data += ')';
+                        
+                    }else if(data.length==8){
+                        
+                        campo.value = data += '-';
+                        
+                    }else if(data.length==9){
+                        
+                        if(campo.value.substr(-1, 1) != '-'){
+                            campo.value = data += '-';
+                        }
+                        
+                    }else if(data.length==13){
+                        
+                        var antes,
+                            num,
+                            fim;
+                        
+                        if(campo.value.substr(-4, 1) != '-'){
+                            
+                            antes = campo.value.substr(0, 8);
+                            num = campo.value.substr(-4, 1);
+                            fim = campo.value.substr(-3);
+                            console.log(antes);
+                            console.log(num);
+                            console.log(fim);
+
+                            campo.value = antes+num+'-'+fim;
+                            
+                        }else{
+                            
+                            campo.value = data;
+                            
+                        }
+                        
+                    }else{
+                        
+                        campo.value = data;
+                        
+                    }
+                }
+                
+            }
+            
         </script>
+        
+        <?php require_once('../../js/logica_login_cliente.php'); ?>
         
     </body>
 </html>

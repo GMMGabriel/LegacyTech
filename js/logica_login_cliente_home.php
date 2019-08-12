@@ -1,8 +1,4 @@
-<script>
-    
-</script>       
-
-<?php
+        <?php
         
         if(isset($_SESSION['idCliente'])){
             
@@ -11,12 +7,10 @@
             // variáveis.
             var divElement = document.querySelector('.botao_imagem_login'), // div que segura tudo.
                 imgElement = document.createElement('img'), // imagem de usuário para quando o cliente fazer o login.
-                divNome = document.querySelector('.mostra_nome_cliente'), // div que mostra o nome do cliente logado.
+                textoDivNome = document.querySelector('.mostra_nome_cliente b'), // tag onde fica o texto que mostra o nome do cliente logado.
                 btnSairElement = document.querySelector('#btnLogout'), // botão de sair para fazer o logout.
                 btnEditarPerfilElement = document.querySelector('#btnEditarPerfil'), // botão de editar o perfil
                 ativo = false; // variável boolean para saber se a div que mostra as opções para o cliente está ativa ou não.
-            
-            alert("olá");
             
             // Set novos atributos na tag "img".
             imgElement.setAttribute('src', 'imagens/img_user.png');
@@ -25,7 +19,12 @@
             // Adiciona a imagem de usuário, assim ele vai aparecer.
             divElement.appendChild(imgElement);
             
-            $('.mostra_nome_cliente').css({'display':'block'});
+            // Torna a div que mostra o nome do cliente visível.
+            function mostraNome(){
+                $('.mostra_nome_cliente').css({'display':'block'});
+            }
+            
+            mostraNome();
             
             // Ao clicar na imagem de usuáio, aparece a div que contem as opções de ações do cliente.
             function menuOpcoesCliente(){
@@ -46,7 +45,7 @@
             
             // Ao clicar na imagem de usuáio, aparece a div que contem as opções de ações do cliente.
             imgElement.onclick = menuOpcoesCliente;
-            divNome.onclick = menuOpcoesCliente;
+            textoDivNome.onclick = menuOpcoesCliente;
             
             // Botão de "editar perfil".
             btnEditarPerfilElement.onclick = function(){

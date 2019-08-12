@@ -1,9 +1,4 @@
-<script>
-            
-            console.log("olá");
-</script>        
-
-<?php
+        <?php
         
         if(isset($_SESSION['idCliente'])){
             

@@ -17,10 +17,6 @@ if (session_status() !== PHP_SESSION_ACTIVE){
         <link rel="stylesheet" type="text/css" href="../../css/menu.css">
         <link rel="stylesheet" type="text/css" href="../../css/footer.css">
         <link rel="stylesheet" type="text/css" href="../../css/modal_login.css">
-        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/jquery2.js"></script>
-        <script type="text/javascript" src="../../js/modal_login.js"></script>
         
         <?php require_once("../modo/icone_logo.php"); ?>
         
@@ -84,6 +80,13 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 <!--    RODAPÉ    -->
         
         <?php require_once("../modo/rodape.php"); ?>
+        
+        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery2.js"></script>
+        <script type="text/javascript" src="../../js/modal_login.js"></script>
+        
+        <?php require_once('../../js/logica_login_cliente.php'); ?>
         
     </body>
 </html>

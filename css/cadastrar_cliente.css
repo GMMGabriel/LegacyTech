@@ -82,15 +82,15 @@
 /* ÁREA DOS BOTÔES. */
 
 .area_botoes{
-    width: 240px;
+    width: 260px;
     min-height: 0px;
     height: auto;
     overflow: auto;
-    padding-left: 950px;
+    padding-left: 928px;
 }
 
 .btns_cadastrar{
-    width: 90px;
+    width: 100px;
     height: 30px;
     padding: 5px;
     background-color: #fff;

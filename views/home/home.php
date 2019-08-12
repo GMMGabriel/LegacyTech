@@ -9,10 +9,6 @@
         <link rel="stylesheet" type="text/css" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" type="text/css" href="css/logica_produtos.css">
-        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery2.js"></script>
-        <script type="text/javascript" src="js/modal_login.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="icones/icone_logo.png">
         
         <?php //$_SESSION['idCliente'];?>
@@ -54,7 +50,6 @@
                             <div id="btnLogout" class="linhasOp">Logout</div>
                         </div>
                     </div>
-                    <?php require_once('js/logica_login_cliente_home.php'); ?>
                     
 <!--                Menus.    -->
                     <nav id="lista_menu">
@@ -68,48 +63,60 @@
                                 </a>
                             </li>
                             
-                            <a href="views/produtos/">
-                                <li>
-                                    Produtos
-                                    <div class="movimento_efeito"></div>
-                                </li>
-                            </a>
+                            <li>
+                                <a href="views/produtos/">
+                                    <div class="div_lista_menu">
+                                        Produtos
+                                        <div class="movimento_efeito"></div>
+                                    </div>
+                                </a>
+                            </li>
                             
                             <li id="sub_menu">
-                                Sobre a empresa
-                                <div class="movimento_efeito"></div>
+                                <div class="div_lista_menu">
+                                    Sobre a empresa
+                                    <div class="movimento_efeito"></div>
+                                </div>
 
                                 <ul>
-                                    <a href="views/sobre_a_empresa/historia.php">
-                                        <li>
-                                            História
-                                            <div class="movimento_efeito"></div>
-                                        </li>
-                                    </a>
+                                    <li>
+                                        <a href="views/sobre_a_empresa/historia.php">
+                                            <div class="div_lista_menu">
+                                                História
+                                                <div class="movimento_efeito"></div>
+                                            </div>
+                                        </a>
+                                    </li>
 
-                                    <a href="views/sobre_a_empresa/mvv.php">
-                                        <li>
-                                            MVV
-                                            <div class="movimento_efeito"></div>
-                                        </li>
-                                    </a>
+                                    <li>
+                                        <a href="views/sobre_a_empresa/mvv.php">
+                                            <div class="div_lista_menu">
+                                                MVV
+                                                <div class="movimento_efeito"></div>
+                                            </div>
+                                        </a>
+                                    </li>
 
-                                    <a href="views/sobre_a_empresa/localizacao.php">
-                                        <li>
-                                            Localização
-                                            <div class="movimento_efeito"></div>
-                                        </li>
-                                    </a>
+                                    <li>
+                                        <a href="views/sobre_a_empresa/localizacao.php">
+                                            <div class="div_lista_menu">
+                                                Localização
+                                                <div class="movimento_efeito"></div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
 
                             </li>
                             
-                            <a href="views/fale_conosco/">
-                                <li>
-                                    Fale conosco
-                                    <div class="movimento_efeito"></div>
-                                </li>
-                            </a>
+                            <li>
+                                <a href="views/fale_conosco/">
+                                    <div class="div_lista_menu">
+                                        Fale conosco
+                                        <div class="movimento_efeito"></div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -137,26 +144,34 @@
                     $cont = 0;
                     
                     while($cont < count($listProdutos)){
+                        
+                        $name_form = "produto".$cont;
                     
                     ?>
                     
-                    <div class="container_produtos">
-                        <div class="imagem_produtos">
-                            <img src="<?=$listProdutos[$cont]->imagem;?>" alt="<?=$listProdutos[$cont]->descricao;?>" title="<?=$listProdutos[$cont]->descricao;?>">
-                        </div>
-                        
-                        <div class="info_produtos">
-                            <div class="info_produtos_descricao">
-                                <div class="info_produtos_descricao_reforco">
-                                    <?=$listProdutos[$cont]->descricao;?>
+                    <form name="<?=$name_form;?>" method="post" action="views/ver_produto/">
+                        <div class="container_produtos" onclick="verProduto('<?=$name_form;?>');">
+                            <input type="hidden" name="txtIdProduto" value="<?=$listProdutos[$cont]->idProduto;?>">
+                            <input type="hidden" name="txtDescricao" value="<?=$listProdutos[$cont]->descricao;?>">
+                            <input type="hidden" name="txtPreco" value="<?=$listProdutos[$cont]->preco;?>">
+                            <input type="hidden" name="txtImagem" value="<?=$listProdutos[$cont]->imagem;?>">
+                            <div class="imagem_produtos">
+                                <img src="<?=$listProdutos[$cont]->imagem;?>" alt="<?=$listProdutos[$cont]->descricao;?>" title="<?=$listProdutos[$cont]->descricao;?>">
+                            </div>
+
+                            <div class="info_produtos">
+                                <div class="info_produtos_descricao">
+                                    <div class="info_produtos_descricao_reforco">
+                                        <?=$listProdutos[$cont]->descricao;?>
+                                    </div>
+                                </div>
+
+                                <div class="info_produtos_valor">
+                                    R$<?=$listProdutos[$cont]->preco;?>
                                 </div>
                             </div>
-                            
-                            <div class="info_produtos_valor">
-                                R$<?=$listProdutos[$cont]->preco;?>
-                            </div>
                         </div>
-                    </div>
+                    </form>
                     
                     <?php
                         
@@ -316,5 +331,23 @@
                 </div>
             </div>
         </footer>
+        
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery2.js"></script>
+        <script type="text/javascript" src="js/modal_login.js"></script>
+    
+        <script>
+
+            function verProduto(name_form){
+
+                document.forms[name_form].submit();
+
+            }
+
+        </script>
+        
+        <?php require_once('js/logica_login_cliente_home.php'); ?>
+        
     </body>
 </html>

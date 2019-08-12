@@ -17,10 +17,6 @@ if (session_status() !== PHP_SESSION_ACTIVE){
         <link rel="stylesheet" type="text/css" href="../../css/footer.css">
         <link rel="stylesheet" type="text/css" href="../../css/modal_login.css">
         <link rel="stylesheet" type="text/css" href="../../css/fale_conosco.css">
-        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/jquery2.js"></script>
-        <script type="text/javascript" src="../../js/modal_login.js"></script>
         
         <?php require_once("../modo/icone_logo.php"); ?>
         
@@ -50,7 +46,7 @@ if (session_status() !== PHP_SESSION_ACTIVE){
         <div id="main">
             <div class="segura_conteudo_no_meio">
                 <div id="passar_info">
-                    Aqui você pode mandar uma mensagem para nós. Sobre criticas, dicas, opniões, satisfações, experiência com nossos produtos, etc. Só pedimos que utilize um linguajar adequado. Obs: os campos com " * " são obrigatórios.
+                    Aqui você pode mandar uma mensagem para nós. Sobre criticas, dicas, opniões, satisfações, experiência com nossos produtos, etc. Só pedimos que utilize um linguajar adequado. Obs: os campos com * são obrigatórios.
                 </div>
                 <form name="fale_conosco" method="post" action="../../router.php?controller=fale_conosco&modo=salvar">
 <!--                Nome e Sobrenome.    -->
@@ -92,6 +88,13 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 <!--    RODAPÉ    -->
         
         <?php require_once("../modo/rodape.php"); ?>
+        
+        <script type="text/javascript" src="../../js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery2.js"></script>
+        <script type="text/javascript" src="../../js/modal_login.js"></script>
+        
+        <?php require_once('../../js/logica_login_cliente.php'); ?>
         
     </body>
 </html>

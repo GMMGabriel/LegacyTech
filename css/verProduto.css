@@ -1,0 +1,137 @@
+/* CSS da página ver produto. */
+
+/* As duas colunas. */
+.colunas{
+    width: 50%;/*595px*/
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+
+/* Segura a imagem. */
+#segura_imagem{
+    width: 90%;/*535.5*/
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+}
+
+#segura_imagem img{
+    min-width: 0px;
+    max-width: 100%;
+    width: auto;
+    min-height: 0px;
+    max-height: 100%;
+    height: auto;
+}
+
+/* Segura as informações do produto. */
+#segura_info{
+    width: 90%;/*535.5px*/
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+
+.mostraInfo{
+    width: 515.5px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Botão. */
+
+#seguraBotao{
+    width: 100%;
+    min-height: 59px;
+    text-align: center;
+}
+
+#btnComprar{
+    width: 220px;
+    min-height: 10px;
+    height: auto;
+    padding: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    background-color: #38e038;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnComprar:hover{
+    margin-left: -10px;
+    margin-top: -10px;
+    box-shadow: 6px 10px 3px #222;
+    transition: 0.3s;
+}
+
+/* Modal para finalizar a compra. */
+
+#modalContainerComprar{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+#modalComprar{
+    width: 500px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+    background-color: #999;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+}
+
+#dialog_comprar{
+    width: 468px;
+    min-height: 0px;
+    height: auto;
+    overflow: auto;
+    padding: 16px;
+    text-align: center;
+}
+
+#dialog_comprar p{
+    padding: 0px;
+    margin: 0px;
+    text-indent: 0px;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+#dialog_comprar input{
+    width: 220px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+#dialog_comprar input:hover{
+    background-color: #112;
+    color: #fff;
+    transition: 0.3s;
+}
